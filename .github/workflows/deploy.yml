@@ -18,8 +18,10 @@ jobs:
 
       - name: Create deployment package
         run: |
-          tar --exclude=content --exclude=media --exclude=site/config --exclude=storage \
-              -czf deploy.tar.gz .
+          mkdir deploy
+          rsync -av --exclude=content --exclude=media --exclude=site/config --exclude=storage --exclude=deploy . deploy/
+          tar -czf deploy.tar.gz -C deploy .
+          rm -rf deploy
 
       - name: Copy files to server via SSH
         uses: appleboy/scp-action@v0.1.7
