@@ -25,23 +25,23 @@
     "php": "~8.4.0",
     "getkirby/cms": "^4.6.1"
   },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.45"
+  },
   "config": {
     "allow-plugins": {
-      "getkirby/composer-installer": true,
-      "ergebnis/composer-normalize": true
+      "ergebnis/composer-normalize": true,
+      "getkirby/composer-installer": true
     },
     "optimize-autoloader": true
+  },
+  "extra": {
+    "kirby-cms-path": false
   },
   "scripts": {
     "start": [
       "Composer\\Config::disableProcessTimeout",
       "@php -S localhost:8000 kirby/router.php"
     ]
-  },
-  "extra": {
-    "kirby-cms-path": false
-  },
-  "require-dev": {
-    "ergebnis/composer-normalize": "~2.45"
   }
 }
