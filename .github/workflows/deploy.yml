@@ -18,10 +18,11 @@ jobs:
 
       - name: Create deployment package
         run: |
-          mkdir deploy
-          rsync -av --exclude=content --exclude=media --exclude=site/config --exclude=storage --exclude=deploy . deploy/
-          tar -czf deploy.tar.gz -C deploy .
-          rm -rf deploy
+          mkdir -p deploy-temp
+          cp -r assets kirby site vendor .htaccess composer.json composer.lock favicon.ico index.php deploy-temp/
+          rm -rf deploy-temp/site/accounts deploy-temp/site/config
+          tar -czf deploy.tar.gz -C deploy-temp .
+          rm -rf deploy-temp
 
       - name: Copy files to server via SSH
         uses: appleboy/scp-action@v0.1.7
