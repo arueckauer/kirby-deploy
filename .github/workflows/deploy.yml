@@ -26,7 +26,7 @@ jobs:
       - name: Create deployment package
         run: |
           mkdir -p deploy-temp
-          cp -r assets kirby site vendor .htaccess composer.json composer.lock favicon.ico index.php deploy-temp/
+          cp -r assets site vendor .htaccess composer.json composer.lock favicon.ico index.php deploy-temp/
           rm -rf deploy-temp/site/accounts deploy-temp/site/config
           tar -czf deploy.tar.gz -C deploy-temp .
           rm -rf deploy-temp
