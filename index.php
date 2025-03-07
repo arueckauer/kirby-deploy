@@ -1,5 +1,9 @@
 <?php
 
-require __DIR__ . '/kirby/bootstrap.php';
+require 'vendor/autoload.php';
 
-echo (new Kirby)->render();
+echo (new Kirby([
+    'roots' => [
+        'index' => __DIR__
+    ]
+]))->render();
