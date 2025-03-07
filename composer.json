@@ -27,7 +27,8 @@
   },
   "config": {
     "allow-plugins": {
-      "getkirby/composer-installer": true
+      "getkirby/composer-installer": true,
+      "ergebnis/composer-normalize": true
     },
     "optimize-autoloader": true
   },
@@ -39,5 +40,8 @@
   },
   "extra": {
     "kirby-cms-path": false
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "~2.45"
   }
 }
