@@ -1,26 +1,17 @@
 {
-  "name": "getkirby/starterkit",
-  "description": "Kirby Starterkit",
+  "name": "arueckauer/kirby-deploy",
+  "description": "GitHub Action Deploy Setup for KirbyCMS",
+  "license": "BSD-3-Clause",
   "type": "project",
-  "keywords": [
-    "kirby",
-    "cms",
-    "starterkit"
-  ],
   "authors": [
     {
-      "name": "Bastian Allgeier",
-      "email": "bastian@getkirby.com",
-      "homepage": "https://getkirby.com"
+      "name": "Andi Rückauer",
+      "email": "rueckauer@intelliact.ch",
+      "homepage": "https://arueckauer.github.io/",
+      "role": "Developer"
     }
   ],
-  "homepage": "https://getkirby.com",
-  "support": {
-    "email": "support@getkirby.com",
-    "issues": "https://github.com/getkirby/starterkit/issues",
-    "forum": "https://forum.getkirby.com",
-    "source": "https://github.com/getkirby/starterkit"
-  },
+  "homepage": "https://github.com/arueckauer/kirby-deploy/",
   "require": {
     "php": "~8.4.0",
     "getkirby/cms": "^4.6.1"
@@ -37,11 +28,5 @@
   },
   "extra": {
     "kirby-cms-path": false
-  },
-  "scripts": {
-    "start": [
-      "Composer\\Config::disableProcessTimeout",
-      "@php -S localhost:8000 kirby/router.php"
-    ]
   }
 }
